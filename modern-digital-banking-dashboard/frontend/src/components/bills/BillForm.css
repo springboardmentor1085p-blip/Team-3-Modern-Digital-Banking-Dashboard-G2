@@ -1,0 +1,87 @@
+.bill-form-dialog .MuiDialog-paper {
+  background-color: #ffffff !important;
+  color: #111827;
+  border-radius: 12px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= TITLE ================= */
+.bill-form-dialog .MuiDialogTitle-root {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 20px 24px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.bill-form-dialog .MuiDialogTitle-root .MuiIconButton-root {
+  color: #ffffff;
+}
+
+.bill-form-dialog .MuiDialogTitle-root .MuiIconButton-root:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ================= CONTENT ================= */
+.bill-form-dialog .MuiDialogContent-root {
+  background-color: #ffffff;
+  color: #111827;
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* ================= ACTIONS ================= */
+.bill-form-dialog .MuiDialogActions-root {
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  padding: 16px 24px;
+}
+
+/* ================= INPUT FIX ================= */
+.bill-form-dialog .MuiOutlinedInput-root {
+  background-color: #ffffff;
+}
+
+.bill-form-dialog .MuiInputLabel-root {
+  color: #374151;
+}
+
+.bill-form-dialog .MuiOutlinedInput-notchedOutline {
+  border-color: #d1d5db;
+}
+
+/* ================= REWARD PREVIEW ================= */
+.reward-preview {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.reward-points {
+  color: #16a34a;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================= LOADING ================= */
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .bill-form-dialog .MuiDialog-paper {
+    margin: 16px;
+    width: calc(100% - 32px);
+  }
+}
