@@ -1,0 +1,172 @@
+.reward-summary-container {
+  animation: fadeIn 0.5s ease;
+}
+
+/* =========================
+   BASE CARD STYLES
+========================= */
+.summary-card {
+  border-radius: 12px;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   TOTAL POINTS (DARK – KEEP)
+========================= */
+.summary-card.total-points {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border: none;
+}
+
+.summary-card.total-points .MuiTypography-root {
+  color: #ffffff !important;
+}
+
+.summary-card.total-points .MuiTypography-colorTextSecondary {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* =========================
+   CURRENT TIER (WHITE)
+========================= */
+.summary-card.current-tier {
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+}
+
+/* =========================
+   NEXT TIER (WHITE – FIXED)
+========================= */
+.summary-card.next-tier {
+  background: #ffffff !important;
+  border: 2px solid #d0d7e2;
+  color: #1f2937;
+}
+
+/* Remove dark overlays */
+.summary-card.next-tier * {
+  color: inherit;
+}
+
+/* Upcoming benefits box */
+.summary-card.next-tier .MuiBox-root {
+  background: #f9fafb !important;
+  border: 1px solid #e5e7eb;
+}
+
+/* =========================
+   PROGRESS BAR COLORS
+========================= */
+.summary-card .MuiLinearProgress-root {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.summary-card.bronze .MuiLinearProgress-bar {
+  background-color: #cd7f32;
+}
+
+.summary-card.silver .MuiLinearProgress-bar {
+  background-color: #c0c0c0;
+}
+
+.summary-card.gold .MuiLinearProgress-bar {
+  background-color: #ffd700;
+}
+
+.summary-card.platinum .MuiLinearProgress-bar {
+  background-color: #e5e4e2;
+}
+
+.summary-card.diamond .MuiLinearProgress-bar {
+  background-color: #b9f2ff;
+}
+
+/* =========================
+   TABS
+========================= */
+.MuiTab-root {
+  text-transform: none !important;
+  font-weight: 500 !important;
+}
+
+.MuiTab-root.Mui-selected {
+  color: #667eea !important;
+}
+
+.MuiTabs-indicator {
+  background-color: #667eea !important;
+  height: 3px;
+  border-radius: 3px;
+}
+
+/* =========================
+   INFO ALERT
+========================= */
+.MuiAlert-root {
+  border-radius: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .summary-card {
+    margin-bottom: 16px;
+  }
+
+  .summary-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* =========================
+   🚫 DARK MODE DISABLED
+========================= */
+/* Intentionally removed prefers-color-scheme: dark */
+/* App will ALWAYS stay light mode */
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   PRINT
+========================= */
+@media print {
+  .summary-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .MuiTabs-root,
+  .MuiIconButton-root {
+    display: none !important;
+  }
+}
+
+/* Capitalize tier names */
+.reward-summary-container h3,
+.summary-card h3,
+.summary-card .MuiTypography-h3 {
+  text-transform: capitalize;
+}

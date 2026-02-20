@@ -1,0 +1,248 @@
+/* ================================
+   GLOBAL PAGE STYLES
+================================ */
+
+.bills-page {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #eef2ff 50%,
+    #ffffff 100%
+  );
+  animation: fadeIn 0.5s ease;
+  color: #111827;
+}
+
+/* ================================
+   FORCE LIGHT MODE (OVERRIDE OS)
+================================ */
+
+.bills-page,
+.MuiPaper-root,
+.MuiCard-root,
+.MuiDrawer-paper,
+.MuiDialog-paper,
+.MuiTabs-root {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+.MuiTypography-root {
+  color: #111827 !important;
+}
+
+.MuiDivider-root {
+  border-color: #e5e7eb;
+}
+
+/* ================================
+   HEADER & PAGE INTRO
+================================ */
+
+.bills-page .page-header {
+  animation: slideDown 0.5s ease;
+}
+
+/* ================================
+   ALERTS
+================================ */
+
+.MuiAlert-root {
+  animation: slideIn 0.3s ease;
+}
+
+.MuiAlert-root.overdue-alert {
+  border-left: 4px solid #dc2626;
+}
+
+.MuiAlert-root.due-soon-alert {
+  border-left: 4px solid #f59e0b;
+}
+
+.MuiAlert-root.summary-alert {
+  border-left: 4px solid #2563eb;
+}
+
+/* ================================
+   SIDEBAR (LEFT PANEL)
+================================ */
+
+.sidebar-paper {
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+}
+
+.sidebar-paper .MuiButton-root {
+  justify-content: flex-start;
+  text-transform: none;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px 16px;
+  transition: all 0.25s ease;
+}
+
+.sidebar-paper .MuiButton-root:hover {
+  background-color: #f1f5f9;
+  transform: translateX(4px);
+}
+
+.sidebar-paper .MuiButton-containedPrimary {
+  background: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.sidebar-paper .MuiButton-containedPrimary:hover {
+  background: #1d4ed8;
+}
+
+/* ================================
+   SUMMARY STATS
+================================ */
+
+.summary-stats {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.summary-stats .stat-item {
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.summary-stats .stat-item:hover {
+  background: #eef2ff;
+}
+
+/* ================================
+   TABS (MOBILE)
+================================ */
+
+.MuiTabs-root {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.MuiTab-root {
+  text-transform: none !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  min-height: 44px !important;
+  transition: all 0.2s ease !important;
+}
+
+.MuiTab-root:hover {
+  background: #f1f5f9;
+}
+
+.MuiTab-root.Mui-selected {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+.MuiTabs-indicator {
+  display: none;
+}
+
+/* ================================
+   BILL LIST CARDS (HELPERS)
+================================ */
+
+.overdue-bill-card {
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+}
+
+.overdue-bill-card:hover {
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.15);
+}
+
+.due-soon-bill-card {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.due-soon-bill-card:hover {
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.15);
+}
+
+/* ================================
+   LOADING OVERLAY
+================================ */
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ================================
+   MOBILE ADJUSTMENTS
+================================ */
+
+@media (max-width: 600px) {
+  .bills-page {
+    background: #ffffff;
+  }
+
+  .MuiContainer-root {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .MuiTab-root {
+    font-size: 0.875rem !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ================================
+   PRINT MODE
+================================ */
+
+@media print {
+  .bills-page {
+    background: #ffffff !important;
+  }
+
+  .MuiDrawer-root,
+  .MuiAppBar-root,
+  .MuiButton-root,
+  .MuiIconButton-root {
+    display: none !important;
+  }
+
+  .MuiPaper-root {
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+  }
+}

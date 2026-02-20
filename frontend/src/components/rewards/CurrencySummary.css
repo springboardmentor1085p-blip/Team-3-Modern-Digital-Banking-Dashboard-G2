@@ -1,0 +1,309 @@
+.currency-summary-container {
+  animation: fadeIn 0.5s ease;
+}
+
+.currency-summary.compact {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.currency-summary.compact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Currency converter styles */
+.currency-converter {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 24px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.currency-converter::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.3;
+  animation: float 30s linear infinite;
+}
+
+.currency-converter .MuiInputBase-root {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.currency-converter .MuiInputBase-input,
+.currency-converter .MuiInputLabel-root,
+.currency-converter .MuiSelect-icon {
+  color: white !important;
+}
+
+.currency-converter .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.currency-converter .MuiInputBase-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.currency-converter .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+  border-width: 2px;
+}
+
+/* Currency flag avatars */
+.currency-flag {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+}
+
+/* Swap button animation */
+.swap-button {
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.swap-button:hover {
+  transform: rotate(180deg) scale(1.1);
+}
+
+/* Conversion display */
+.conversion-display {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Table styles */
+.MuiTableRow-root:hover {
+  background-color: rgba(102, 126, 234, 0.05);
+}
+
+.currency-table .MuiTableCell-root {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.currency-table .MuiTableRow-root:last-child .MuiTableCell-root {
+  border-bottom: none;
+}
+
+/* Progress bars in table */
+.table-progress {
+  min-width: 60px;
+}
+
+/* Exchange rate history */
+.rate-history-item {
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.rate-history-item:hover {
+  background-color: rgba(102, 126, 234, 0.05);
+  transform: translateX(4px);
+}
+
+.rate-history-item.current {
+  background-color: rgba(76, 175, 80, 0.1);
+  border-left: 3px solid #4caf50;
+}
+
+/* Primary currency card */
+.primary-currency-card {
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.primary-currency-card .MuiAvatar-root {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Currency chip */
+.currency-chip {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 16px;
+  background-color: rgba(33, 150, 243, 0.1);
+  color: #2196f3;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .currency-converter {
+    padding: 16px;
+  }
+  
+  .conversion-display {
+    padding: 16px;
+  }
+  
+  .currency-flag {
+    width: 24px;
+    height: 24px;
+    font-size: 1.25rem;
+  }
+  
+  .swap-button {
+    transform: rotate(90deg);
+  }
+  
+  .swap-button:hover {
+    transform: rotate(270deg) scale(1.1);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .currency-converter {
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  }
+  
+  .conversion-display {
+    background: rgba(45, 55, 72, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+  }
+  
+  .MuiTableRow-root:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .currency-table .MuiTableCell-root {
+    border-bottom-color: #4a5568;
+  }
+  
+  .rate-history-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .primary-currency-card {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  }
+  
+  .currency-chip {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #90caf9;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50px, -50px) rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Exchange rate trend arrows */
+.trend-up {
+  color: #4caf50;
+  animation: bounceUp 1s infinite;
+}
+
+.trend-down {
+  color: #f44336;
+  animation: bounceDown 1s infinite;
+}
+
+@keyframes bounceUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes bounceDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* Loading shimmer */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .currency-summary-container {
+    animation: none;
+  }
+  
+  .currency-converter {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #ddd;
+  }
+  
+  .MuiIconButton-root {
+    display: none;
+  }
+  
+  .swap-button {
+    display: none;
+  }
+}

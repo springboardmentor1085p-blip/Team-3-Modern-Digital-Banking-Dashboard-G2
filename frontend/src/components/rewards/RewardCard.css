@@ -1,0 +1,292 @@
+.reward-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid #e0e0e0;
+}
+
+.reward-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.reward-card.compact {
+  border-radius: 8px;
+}
+
+.reward-card.compact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Tier-specific styles */
+.reward-card.bronze {
+  border-left: 4px solid #cd7f32;
+}
+
+.reward-card.silver {
+  border-left: 4px solid #c0c0c0;
+}
+
+.reward-card.gold {
+  border-left: 4px solid #ffd700;
+  background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+}
+
+.reward-card.platinum {
+  border-left: 4px solid #e5e4e2;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+}
+
+.reward-card.diamond {
+  border-left: 4px solid #b9f2ff;
+  background: linear-gradient(135deg, #e6f7ff 0%, #ccf0ff 100%);
+  animation: diamondGlow 3s infinite;
+}
+
+/* Tier avatar animations */
+.tier-avatar {
+  transition: all 0.3s ease;
+}
+
+.reward-card:hover .tier-avatar {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.reward-card.gold .tier-avatar,
+.reward-card.platinum .tier-avatar,
+.reward-card.diamond .tier-avatar {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Progress bar customization */
+.MuiLinearProgress-root.tier-progress {
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.MuiLinearProgress-bar.tier-progress-bar {
+  border-radius: 4px;
+}
+
+.reward-card.bronze .MuiLinearProgress-bar {
+  background-color: #cd7f32;
+}
+
+.reward-card.silver .MuiLinearProgress-bar {
+  background-color: #c0c0c0;
+}
+
+.reward-card.gold .MuiLinearProgress-bar {
+  background-color: #ffd700;
+  animation: goldShine 2s infinite;
+}
+
+.reward-card.platinum .MuiLinearProgress-bar {
+  background-color: #e5e4e2;
+}
+
+.reward-card.diamond .MuiLinearProgress-bar {
+  background-color: #b9f2ff;
+  animation: diamondShine 2s infinite;
+}
+
+/* Category chip colors */
+.MuiChip-root.category-utilities {
+  border-color: #2196f3;
+  color: #2196f3;
+  background-color: #2196f310;
+}
+
+.MuiChip-root.category-rent {
+  border-color: #9c27b0;
+  color: #9c27b0;
+  background-color: #9c27b010;
+}
+
+.MuiChip-root.category-mortgage {
+  border-color: #673ab7;
+  color: #673ab7;
+  background-color: #673ab710;
+}
+
+.MuiChip-root.category-credit_card {
+  border-color: #f44336;
+  color: #f44336;
+  background-color: #f4433610;
+}
+
+.MuiChip-root.category-loan {
+  border-color: #ff9800;
+  color: #ff9800;
+  background-color: #ff980010;
+}
+
+.MuiChip-root.category-insurance {
+  border-color: #009688;
+  color: #009688;
+  background-color: #00968810;
+}
+
+.MuiChip-root.category-subscription {
+  border-color: #795548;
+  color: #795548;
+  background-color: #79554810;
+}
+
+.MuiChip-root.category-education {
+  border-color: #3f51b5;
+  color: #3f51b5;
+  background-color: #3f51b510;
+}
+
+.MuiChip-root.category-medical {
+  border-color: #e91e63;
+  color: #e91e63;
+  background-color: #e91e6310;
+}
+
+.MuiChip-root.category-tax {
+  border-color: #607d8b;
+  color: #607d8b;
+  background-color: #607d8b10;
+}
+
+.MuiChip-root.category-other {
+  border-color: #9e9e9e;
+  color: #9e9e9e;
+  background-color: #9e9e9e10;
+}
+
+/* Points display */
+.points-display {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes diamondGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(185, 242, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(185, 242, 255, 0.8);
+  }
+}
+
+@keyframes goldShine {
+  0%, 100% {
+    background-color: #ffd700;
+  }
+  50% {
+    background-color: #ffed4e;
+  }
+}
+
+@keyframes diamondShine {
+  0%, 100% {
+    background-color: #b9f2ff;
+  }
+  50% {
+    background-color: #7ce0ff;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Favorite star animation */
+.MuiIconButton-root .MuiSvgIcon-root {
+  transition: all 0.3s ease;
+}
+
+.MuiIconButton-root:hover .MuiSvgIcon-root {
+  transform: scale(1.2);
+}
+
+/* Expand button animation */
+.MuiButton-root .MuiSvgIcon-root {
+  transition: transform 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .reward-card {
+    margin-bottom: 16px;
+  }
+  
+  .reward-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .points-display {
+    font-size: 1.5rem;
+  }
+  
+  .tier-avatar {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .reward-card {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .reward-card.gold {
+    background: linear-gradient(135deg, #443a1a 0%, #332a14 100%);
+  }
+  
+  .reward-card.platinum {
+    background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  }
+  
+  .reward-card.diamond {
+    background: linear-gradient(135deg, #1a2d33 0%, #142229 100%);
+  }
+  
+  .MuiChip-root {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Print styles */
+@media print {
+  .reward-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .reward-card:hover {
+    transform: none;
+  }
+  
+  .MuiCardActions-root {
+    display: none;
+  }
+  
+  .MuiIconButton-root {
+    display: none;
+  }
+}
