@@ -1,0 +1,223 @@
+/* =========================================================
+   REWARDS PAGE – LIGHT MODE ONLY (FINAL)
+   ========================================================= */
+
+.rewards-page {
+  min-height: 100vh;
+  background: #f9fafb;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ---------------------------------------------------------
+   PAGE HEADER
+--------------------------------------------------------- */
+.rewards-page .page-header {
+  animation: slideDown 0.4s ease;
+}
+
+/* ---------------------------------------------------------
+   TIER CARDS
+--------------------------------------------------------- */
+.tier-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.25s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.tier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.tier-card::before {
+  content: '';
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tier-card.bronze::before { background: #cd7f32; }
+.tier-card.silver::before { background: #c0c0c0; }
+.tier-card.gold::before { background: #ffd700; }
+.tier-card.platinum::before { background: #e5e4e2; }
+.tier-card.diamond::before { background: #b9f2ff; }
+
+/* Diamond highlight */
+.tier-card.diamond {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+/* ---------------------------------------------------------
+   POINTS DISPLAY
+--------------------------------------------------------- */
+.points-display {
+  font-size: 2.4rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------------------------------------------------------
+   LEADERBOARD
+--------------------------------------------------------- */
+.leaderboard-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
+.leaderboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.leaderboard-card.current-user {
+  border: 2px solid #4f46e5;
+  background: #eef2ff;
+}
+
+/* ---------------------------------------------------------
+   ACHIEVEMENT BADGES
+--------------------------------------------------------- */
+.achievement-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.achievement-badge.bronze { background: #cd7f32; }
+.achievement-badge.silver { background: #9ca3af; }
+.achievement-badge.gold { background: #facc15; color: #78350f; }
+.achievement-badge.platinum { background: #e5e7eb; color: #374151; }
+.achievement-badge.diamond { background: #bae6fd; color: #0369a1; }
+
+/* ---------------------------------------------------------
+   CURRENCY CARD
+--------------------------------------------------------- */
+.currency-converter-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.currency-converter-card::before {
+  content: '';
+  height: 4px;
+  width: 100%;
+  display: block;
+  background: linear-gradient(90deg, #6366f1, #4f46e5);
+}
+
+/* ---------------------------------------------------------
+   TABS (MATCH BILLS PAGE)
+--------------------------------------------------------- */
+.MuiTabs-root {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.MuiTab-root {
+  text-transform: none !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  min-height: 44px !important;
+}
+
+.MuiTab-root:hover {
+  background: #f3f4f6;
+}
+
+.MuiTab-root.Mui-selected {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff !important;
+}
+
+.MuiTabs-indicator {
+  display: none;
+}
+
+/* ---------------------------------------------------------
+   DRAWER (MOBILE)
+--------------------------------------------------------- */
+.MuiDrawer-paper {
+  background: #ffffff !important;
+  border-right: 1px solid #e5e7eb;
+}
+
+/* ---------------------------------------------------------
+   LOADING
+--------------------------------------------------------- */
+.rewards-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+--------------------------------------------------------- */
+@media (max-width: 600px) {
+  .rewards-page {
+    background: #ffffff;
+  }
+
+  .tier-card {
+    margin-bottom: 16px;
+  }
+
+  .points-display {
+    font-size: 2rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   ANIMATIONS
+--------------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------
+   PRINT
+--------------------------------------------------------- */
+@media print {
+  .rewards-page {
+    background: #ffffff !important;
+  }
+
+  .MuiButton-root,
+  .MuiIconButton-root,
+  .MuiDrawer-root {
+    display: none !important;
+  }
+
+  .tier-card,
+  .leaderboard-card {
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+  }
+}
+
